@@ -25,15 +25,32 @@ public class ProdutoService {
 
   public ResponseEntity<?> cadastrar(ProdutoModel pm){
 
-    if(pm.getNome(). equals("")){
+    if(pm.getNome().equals("")){
       rm.setMensagem("O nome do produto é obrigatorio");
       return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
     }else if(pm.getMarca().equals("")){
       rm.setMensagem("O nome da marca é obrigatorio");
       return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
     }else{
+      rm.setMensagem("Produto criado com sucesso");
       return new ResponseEntity<ProdutoModel>(pr.save(pm), HttpStatus.CREATED);
     }
   }
+
+  public ResponseEntity<?> alterar(ProdutoModel pm){
+
+    if(pm.getNome().equals("")){
+      rm.setMensagem("O nome do produto é obrigatorio");
+      return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
+    }else if(pm.getMarca().equals("")){
+      rm.setMensagem("O nome da marca é obrigatorio");
+      return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
+    }else{
+      rm.setMensagem("Produto alterado com sucesso");
+      return new ResponseEntity<ProdutoModel>(pr.save(pm), HttpStatus.OK);
+    }
+  }
+
+  public ResponseEntity<RespostaModel>
 
 }
