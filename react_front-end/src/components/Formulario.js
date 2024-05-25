@@ -1,15 +1,15 @@
-function Formulario({botao}){
+function Formulario({botao, eventoTeclado}){
 
 
-  var teste = null
+  var decisao = null
   if (botao === true) {
-    teste = (
+    decisao = (
       <>
         <input type="button" value='Cadastrar' className="btn btn-primary" />
       </>
     )
   }else{
-    teste = (
+    decisao = (
       <div>
         <input type="button" value='Alterar' className="btn btn-warning" />
         <input type="button" value='Remover' className="btn btn-danger" />
@@ -22,10 +22,10 @@ function Formulario({botao}){
     <div>
 
     <form>
-      <input type="text" placeholder="Nome" className="form-control" /> <br/>
-      <input type="text" placeholder="Marca" className="form-control" /> <br/>
+      <input type="text" onChange={eventoTeclado} name="nome" placeholder="Nome" className="form-control" /> <br/>
+      <input type="text" onChange={eventoTeclado} name="marca" placeholder="Marca" className="form-control" /> <br/>
 
-      {teste}
+      {decisao}
       
     </form>
 
