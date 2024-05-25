@@ -17,9 +17,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // Ou posso usar "*"
+@CrossOrigin(origins = "*") // http://localhost:3000
 public class ProdutoController {
   
 
