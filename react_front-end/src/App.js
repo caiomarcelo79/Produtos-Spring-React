@@ -5,7 +5,7 @@ import Tabela from './components/Tabela';
 
 function App() {
 
-  const [btnCadastrar, setBtnCadastrar] = useState(false)
+  const [btnCadastrar, setBtnCadastrar] = useState(true)
   const [produtos, setProdutos] = useState([])
 
   useEffect(function(){
@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <p>{JSON.stringify(produtos)}</p>
       <Formulario botao={btnCadastrar} />
-      <Tabela />
+      <Tabela vetor={produtos} />
     </div>
   );
 }
