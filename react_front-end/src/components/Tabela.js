@@ -1,9 +1,9 @@
 function Tabela(){
 
   return(
-    <>
+    <div>
 
-    <table>
+    <table className="table">
       <thead>
         <tr>
           <th>#</th>
@@ -24,7 +24,7 @@ function Tabela(){
 
     </table>
     
-    </>
+    </div>
   )
 }
 
