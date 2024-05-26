@@ -1,4 +1,4 @@
-function Formulario({botao, eventoTeclado, cadastrar}){
+function Formulario({botao, eventoTeclado, cadastrar, obj}){
 
 
   var decisao = null
@@ -18,12 +18,14 @@ function Formulario({botao, eventoTeclado, cadastrar}){
     )
   }
 
+
+
   return(
     <div>
 
     <form>
-      <input type="text" onChange={eventoTeclado} name="nome" placeholder="Nome" className="form-control" /> <br/>
-      <input type="text" onChange={eventoTeclado} name="marca" placeholder="Marca" className="form-control" /> <br/>
+      <input type="text" value={obj.nome} onChange={eventoTeclado} name="nome" placeholder="Nome" className="form-control" /> <br/>
+      <input type="text" value={obj.marca} onChange={eventoTeclado} name="marca" placeholder="Marca" className="form-control" /> <br/>
 
       {decisao}
       

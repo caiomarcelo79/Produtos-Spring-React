@@ -44,15 +44,20 @@ function App() {
       }else{
         setProdutos([...produtos, retorno_convertido])
         alert('Produto cadastrado com sucesso')
+        limparFormulario()
       }
 
     })
   }
 
+  const limparFormulario = ()=>{
+    SetObjProduto(produto)
+  }
+
   return (
     <div className="App">
       
-      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} />
+      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objProduto} />
       <Tabela vetor={produtos} />
     </div>
   );
