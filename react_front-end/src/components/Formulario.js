@@ -1,4 +1,4 @@
-function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover}){
+function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, alterar}){
 
 
   var decisao = null
@@ -11,7 +11,7 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover}){
   }else{
     decisao = (
       <>
-        <input type="button" value='Alterar' className="btn btn-warning" />
+        <input type="button" value='Alterar' onClick={alterar} className="btn btn-warning" />
         <input type="button" value='Remover' onClick={remover} className="btn btn-danger" />
         <input type="button" value='Cancelar' onClick={cancelar} className="btn btn-secondary" />
       </>

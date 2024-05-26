@@ -77,9 +77,41 @@ function App() {
     })
   }
 
-  let testando = [...produtos]
+  const alterar = ()=>{
+    fetch('http://localhost:8080/alterar', {
+      method:'put',
+      body:JSON.stringify(objProduto),
+      headers:{
+        'Content-type':'application/json',
+        'Accept':'application/json'
+      }
+    })
+    .then(retorno => retorno.json())
+    .then(retorno_convertido => {
+      console.log(retorno_convertido)
 
-  console.log(testando)
+      if (retorno_convertido.mensagem !== undefined) {
+        alert(retorno_convertido.mensagem)
+      }else{
+        alert('Produto alterado com sucesso')
+        
+        
+        let vetorTemp = [...produtos]
+
+        let indice = vetorTemp.findIndex((p)=>{
+          return p.id === objProduto.id
+        })
+  
+        vetorTemp[indice] = objProduto
+  
+        setProdutos(vetorTemp)
+        
+
+        limparFormulario()
+      }
+
+    })
+  }
 
   const limparFormulario = ()=>{
     SetObjProduto(produto)
@@ -94,7 +126,7 @@ function App() {
   return (
     <div className="App">
       
-      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objProduto} cancelar={limparFormulario} remover={remover} />
+      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objProduto} cancelar={limparFormulario} remover={remover} alterar={alterar} />
       <Tabela vetor={produtos} selecionar={selecionarProduto} />
     </div>
   );
