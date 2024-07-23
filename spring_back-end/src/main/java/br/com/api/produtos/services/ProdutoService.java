@@ -27,13 +27,13 @@ public class ProdutoService {
 
     if(pm.getNome().equals("")){
       rm.setMensagem("O nome do produto é obrigatorio");
-      return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
+      return new ResponseEntity<>(rm, HttpStatus.BAD_REQUEST);
     }else if(pm.getMarca().equals("")){
       rm.setMensagem("O nome da marca é obrigatorio");
-      return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
+      return new ResponseEntity<>(rm, HttpStatus.BAD_REQUEST);
     }else{
       rm.setMensagem("Produto criado com sucesso");
-      return new ResponseEntity<ProdutoModel>(pr.save(pm), HttpStatus.CREATED);
+      return new ResponseEntity<>(pr.save(pm), HttpStatus.CREATED);
     }
   }
 
@@ -41,13 +41,13 @@ public class ProdutoService {
 
     if(pm.getNome().equals("")){
       rm.setMensagem("O nome do produto é obrigatorio");
-      return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
+      return new ResponseEntity<>(rm, HttpStatus.BAD_REQUEST);
     }else if(pm.getMarca().equals("")){
       rm.setMensagem("O nome da marca é obrigatorio");
-      return new ResponseEntity<RespostaModel>(rm, HttpStatus.BAD_REQUEST);
+      return new ResponseEntity<>(rm, HttpStatus.BAD_REQUEST);
     }else{
       rm.setMensagem("Produto alterado com sucesso");
-      return new ResponseEntity<ProdutoModel>(pr.save(pm), HttpStatus.OK);
+      return new ResponseEntity<>(pr.save(pm), HttpStatus.OK);
     }
   }
 
@@ -56,7 +56,7 @@ public class ProdutoService {
     pr.deleteById(id);
 
     rm.setMensagem("O produto foi removido com sucesso!");
-    return new ResponseEntity<RespostaModel>(rm, HttpStatus.OK);
+    return new ResponseEntity<>(rm, HttpStatus.OK);
 
   }
 

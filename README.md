@@ -1,4 +1,5 @@
 # Produtos
- Spring + React
 
-PROJETO EM ANDAMENTO
+## CRUD simples usando ReactJS e Spring Framework
+
+PROJETO FINALIZADO
